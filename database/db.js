@@ -1,7 +1,7 @@
 const mysql = require('mysql2');
 const conexion = mysql.createConnection({
     //host     : 'localhost',   
-    host     : 'mysqlc', //aca le puse mysqlc porque cuando creo un contenedor de este crud, le tengo que pasar como host el nombre del contenedor que cree de mysql.
+    host     : 'mysql', //aca le puse mysqlc porque cuando creo un contenedor de este crud, le tengo que pasar como host el nombre del contenedor que cree de mysql.
     user     : 'root',
     password : 'root',
     database : 'crud_nodejs'  
