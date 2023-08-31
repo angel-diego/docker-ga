@@ -1,5 +1,21 @@
 version: '3'
 services:
+  mysqlc:
+    container_name: mysqlc
+    image: mysql
+    ports:
+      - 3306:3306
+    expose:
+      - 3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=crud_nodejs
+    volumes:
+      - /home/docker-ga/data/:/var/lib/mysql
+    networks:
+      - net-phpmsql
+    restart: always
+
   nodejs:
     container_name: node
     image: angeldiego/ga:latest
@@ -8,5 +24,7 @@ services:
     restart: always
     networks:
       - net-phpmsql
+    depends_on:
+      - mysqlc  
 networks:
   net-phpmsql:
