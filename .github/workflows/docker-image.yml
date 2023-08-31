@@ -27,7 +27,5 @@ jobs:
         docker push ${{ secrets.DOCKER_USER }}/ga:${{ github.sha }}
         docker push ${{ secrets.DOCKER_USER }}/ga:latest
     - name: Run
-      run: |
-        docker rm node ||
-        docker run -d -name node -p 3000:3000 --network net-mysql ${{ secrets.DOCKER_USER }}/ga:latest
+      run: docker rm node || docker run -d -name node -p 3000:3000 --network net-mysql ${{ secrets.DOCKER_USER }}/ga:latest
 
