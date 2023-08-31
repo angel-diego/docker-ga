@@ -8,7 +8,5 @@ services:
     restart: always
     networks:
       - net-phpmsql
-    depends_on:
-      - mysqlc
 networks:
   net-phpmsql:
