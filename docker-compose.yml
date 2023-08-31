@@ -2,7 +2,7 @@ version: '3'
 services:
   nodejs:
     container_name: node
-    image: ${{ secrets.DOCKER_USER }}/ga:latest
+    image: angeldiego/ga:latest
     ports:
       - 3000:3000
     restart: always
