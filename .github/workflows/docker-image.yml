@@ -17,7 +17,7 @@ jobs:
     - name: Build
       run: |
         ls
-        docker build --tag ga .
+        docker build -t ga .
     - name: Tags
       run: |
         docker tag ga ${{ secrets.DOCKER_USER }}/ga:${{ github.sha }}
